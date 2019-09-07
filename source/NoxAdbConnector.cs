@@ -29,7 +29,7 @@ namespace nox_app_player_debug_connector
 
         static void Main(string[] args)
         {
-            // INFO : Nox가 D드라이브 설치 됨
+            // INFO : Nox app player installed in drive D
             var lines = new List<string>()
             {
                 @"cd C:Windows",
