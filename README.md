@@ -17,3 +17,6 @@ Nox App Player ADB Connector
 
 ## Known issues
 - Korean log is incorrectly printed
+
+## Reference
+- https://www.bignox.com/blog/how-to-connect-android-studio-with-nox-app-player-for-android-development-and-debug/
