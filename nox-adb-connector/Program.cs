@@ -6,7 +6,11 @@ namespace nox_adb_connector
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var connector = new NoxAdbConnector();
+            connector.Connect();
+
+            Console.WriteLine("Press a key");
+            Console.ReadKey();
         }
     }
 }
