@@ -45,10 +45,7 @@ namespace nox_adb_connector
         {
             MoveTNoxDirectory();
             RunAdbConnect();
-
-            Process.StandardInput.Close();
-            Process.WaitForExit();
-
+            WaitForProcess();
             ShowResult();
         }
 
@@ -74,6 +71,16 @@ namespace nox_adb_connector
 
                 Console.WriteLine($"Connect to 127.0.0.1:{port}");
             }
+
+            Console.WriteLine("\n\n");
+        }
+
+        private void WaitForProcess()
+        {
+            Console.WriteLine("### Please wait...");
+
+            Process.StandardInput.Close();
+            Process.WaitForExit();
 
             Console.WriteLine("\n\n");
         }
