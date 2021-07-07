@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace nox_adb_connector
@@ -16,11 +17,15 @@ namespace nox_adb_connector
                 if (process == null)
                 {
                     process = new Process();
-                    process.StartInfo.FileName = "cmd.exe";
-                    process.StartInfo.RedirectStandardInput = true;
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.StartInfo.CreateNoWindow = false;
-                    process.StartInfo.UseShellExecute = false;
+
+                    var info = process.StartInfo;
+                    info.FileName = "cmd.exe";
+                    info.RedirectStandardInput = true;
+                    info.RedirectStandardOutput = true;
+                    info.CreateNoWindow = false;
+                    info.UseShellExecute = false;
+                    info.StandardOutputEncoding = Encoding.UTF8;
+
                     process.Start();
                 }
 
@@ -49,7 +54,7 @@ namespace nox_adb_connector
 
         private void MoveTNoxDirectory()
         {
-            Console.WriteLine("Move to Nox App Player installation directory");
+            Console.WriteLine("### Move to Nox App Player installation directory");
 
             // INFO : Nox should be installed in D-drive
             ExecuteLine(@"d:");
@@ -60,7 +65,7 @@ namespace nox_adb_connector
 
         private void RunAdbConnect()
         {
-            Console.WriteLine("Run adb connect");
+            Console.WriteLine("### Run adb connect");
 
             foreach (var port in PortList)
             {
@@ -97,7 +102,7 @@ namespace nox_adb_connector
                 }
             }
 
-            Console.WriteLine("ADB connect result");
+            Console.WriteLine("### ADB connect result");
 
             foreach (var port in resultMap.Keys)
                 Console.WriteLine($"Port {port} - {resultMap[port]}");
