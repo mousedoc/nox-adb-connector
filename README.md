@@ -2,8 +2,8 @@
 
 
 ## Features
-- Run nox_adb.exe connect command
-
+- Run `nox_adb connect` with various ports
+- (Not include `nox_adb reverse`) 
 
 ## How to use
 - Install Nox App Player
