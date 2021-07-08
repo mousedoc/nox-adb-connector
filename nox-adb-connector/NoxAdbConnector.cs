@@ -6,10 +6,16 @@ using System.Text.RegularExpressions;
 
 namespace nox_adb_connector
 {
+    /// <summary>
+    /// Adb connector for Nox App Player
+    /// </summary>
     public class NoxAdbConnector
     {
         private Process process = null;
 
+        /// <summary>
+        /// Process to run the command
+        /// </summary>
         private Process Process
         {
             get
@@ -33,6 +39,9 @@ namespace nox_adb_connector
             }
         }
 
+        /// <summary>
+        /// Predefined ports
+        /// </summary>
         private readonly List<int> PortList = new()
         {
             62001,
@@ -41,6 +50,9 @@ namespace nox_adb_connector
             62027,
         };
 
+        /// <summary>
+        /// Execute nox_adb connect and print result
+        /// </summary>
         public void Connect()
         {
             MoveTNoxDirectory();
@@ -49,6 +61,9 @@ namespace nox_adb_connector
             ShowResult();
         }
 
+        /// <summary>
+        /// Move to nox installation directory
+        /// </summary>
         private void MoveTNoxDirectory()
         {
             Console.WriteLine("### Move to Nox App Player installation directory");
@@ -60,6 +75,9 @@ namespace nox_adb_connector
             Console.WriteLine("\n\n");
         }
 
+        /// <summary>
+        /// Execute nox_adb connect command
+        /// </summary>
         private void RunAdbConnect()
         {
             Console.WriteLine("### Run adb connect");
@@ -75,6 +93,9 @@ namespace nox_adb_connector
             Console.WriteLine("\n\n");
         }
 
+        /// <summary>
+        /// Wait for process
+        /// </summary>
         private void WaitForProcess()
         {
             Console.WriteLine("### Please wait...");
@@ -85,6 +106,9 @@ namespace nox_adb_connector
             Console.WriteLine("\n\n");
         }
 
+        /// <summary>
+        /// Process output and print result
+        /// </summary>
         private void ShowResult()
         {
             var output = Process.StandardOutput.ReadToEnd();
@@ -117,6 +141,10 @@ namespace nox_adb_connector
             Console.WriteLine("\n\n");
         }
 
+        /// <summary>
+        /// Internal command line executor
+        /// </summary>
+        /// <param name="line">command line</param>
         private void ExecuteLine(string line)
         {
             Process.StandardInput.WriteLine(line);
