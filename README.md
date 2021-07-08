@@ -6,7 +6,6 @@
 - (Not include `nox_adb reverse`) 
 
 ## How to use
-- Install Nox App Player
 - Change your Nox App Player settings to usb debugging
 - Execute nox-adb-connector.exe
 
