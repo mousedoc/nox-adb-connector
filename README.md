@@ -6,7 +6,7 @@ Easy connect for Nox App Player ADB ('nox_adb')
 - (Not include `nox_adb reverse`) 
 
 ## How to use
-- Change your Nox App Player settings to usb debugging
+- First, Change your Nox App Player settings to usb debugging ON
 - Execute nox-adb-connector.exe
 
 ## How to build
