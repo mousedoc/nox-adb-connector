@@ -1,5 +1,5 @@
 # nox-adb-connector
-
+Easy connect for Nox App Player ADB ('nox_adb')
 
 ## Features
 - Run `nox_adb connect` with various ports
