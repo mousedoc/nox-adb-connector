@@ -7,7 +7,7 @@ Easy connect for Nox App Player ADB ('nox_adb')
 
 ## How to use
 - First, Change your Nox App Player settings to usb debugging ON
-- Execute nox-adb-connector.exe
+- Execute [nox-adb-connector.exe](https://github.com/mousedoc/nox-adb-connector/releases)
 
 ## How to build
 [Runtime identifier](https://docs.microsoft.com/ko-kr/dotnet/core/rid-catalog)
